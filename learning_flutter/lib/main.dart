@@ -45,13 +45,15 @@ class _MyHomePageState extends State<MyHomePage> {
         ],
       )),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          setState(() {
-            number++;
-          });
-        },
+        onPressed: countingNum,
         child: Text("press"),
       ),
     );
+  }
+
+  void countingNum() {
+    setState(() {
+      number++;
+    });
   }
 }
