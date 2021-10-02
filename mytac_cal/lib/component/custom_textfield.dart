@@ -5,24 +5,23 @@ class CustomTextField extends StatelessWidget {
   final List<String> dropdownText;
   final String title;
   final List<int> dropdownValues;
-  final void Function(int?)? onChanged;
+  final void Function(double?)? onChanged;
   final String suffix;
   final TextInputType type;
 
-
-  const CustomTextField({
-    Key? key,
-    this.title = 'Clearance Model',
-    this.dropdownText = const <String>[
-      'Antignac et al',
-      'Golubovic et al',
-      'Bauer et al'
-    ],
-    this.dropdownValues = const <int>[0, 1, 2],
-    this.onChanged,
-    this.suffix = '',
-    this.type = TextInputType.text
-  }) : super(key: key);
+  const CustomTextField(
+      {Key? key,
+      this.title = 'Clearance Model',
+      this.dropdownText = const <String>[
+        'Antignac et al',
+        'Golubovic et al',
+        'Bauer et al'
+      ],
+      this.dropdownValues = const <int>[0, 1, 2],
+      this.onChanged,
+      this.suffix = '',
+      this.type = TextInputType.text})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
