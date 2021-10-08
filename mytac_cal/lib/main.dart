@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'views/about.dart';
 import 'views/adjust/adjustment.dart';
 import 'views/initial_tac_dose/calculator.dart';
 
@@ -33,11 +32,11 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
+  int _selectedIndex = 0;
 
-  void _incrementCounter() {
+  void _onItemTapped(int index) {
     setState(() {
-      _counter++;
+      _selectedIndex = index;
     });
   }
 
@@ -66,17 +65,28 @@ class _MyHomePageState extends State<MyHomePage> {
               },
               child: Text("Adjust TAC Dose"),
             ),
-            ElevatedButton(
-                onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) {
-                    return aboutPage();
-                  }));
-                },
-                child: Icon(Icons.info)),
           ],
         ),
       ),
-
+      bottomNavigationBar: BottomNavigationBar(
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.info),
+            label: 'About',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.help),
+            label: 'Help',
+          ),
+        ],
+        currentIndex: _selectedIndex,
+        selectedItemColor: Colors.blue,
+        onTap: _onItemTapped,
+      ),
       // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
