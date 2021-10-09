@@ -1,12 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:mytac_cal/views/about.dart';
-import 'package:mytac_cal/views/help.dart';
-// import 'views/adjust/adjustment.dart';
-// import 'views/initial_tac_dose/calculator.dart';
 import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
+import 'package:test_bb/nextScreen.dart';
 
-import 'views/mainScreen.dart';
+import 'MainScreen.dart';
+import 'SettingScreen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,16 +12,14 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
-
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'TAC Calculator',
+      title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Tacrolimus Pharmacokinetic Calculator'),
+      home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }
@@ -47,7 +43,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   List<Widget> _buildScreens() {
-    return [mainScreen(), aboutScreen(), helpScreen()];
+    return [nextScreen(), SettingScreen()];
   }
 
   List<PersistentBottomNavBarItem> _navBarsItems() {
@@ -59,17 +55,11 @@ class _MyHomePageState extends State<MyHomePage> {
         inactiveColorPrimary: CupertinoColors.systemGrey,
       ),
       PersistentBottomNavBarItem(
-        icon: Icon(CupertinoIcons.info),
-        title: ("About"),
+        icon: Icon(CupertinoIcons.settings),
+        title: ("Settings"),
         activeColorPrimary: CupertinoColors.activeBlue,
         inactiveColorPrimary: CupertinoColors.systemGrey,
       ),
-      PersistentBottomNavBarItem(
-        icon: Icon(CupertinoIcons.question),
-        title: ("Help"),
-        activeColorPrimary: CupertinoColors.activeBlue,
-        inactiveColorPrimary: CupertinoColors.systemGrey,
-      )
     ];
   }
 

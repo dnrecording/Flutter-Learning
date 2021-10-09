@@ -1,4 +1,4 @@
-name: mytac_cal
+name: test_bb
 description: A new Flutter project.
 
 # The following line prevents the package from being accidentally published to
@@ -27,17 +27,9 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  persistent_bottom_nav_bar: any
   flutter:
     sdk: flutter
-  auto_size_text:
-  cached_network_image: ^3.1.0
-  font_awesome_flutter:
-  geolocator: 7.6.2
-  google_fonts: ^2.1.0
-  intl:
-  page_transition:
-  timeago:
-  url_launcher:
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -45,7 +37,6 @@ dependencies:
   cupertino_icons: ^1.0.2
 
 dev_dependencies:
-  persistent_bottom_nav_bar: any
   flutter_test:
     sdk: flutter
 
@@ -66,11 +57,7 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
-  assets:
-    - assets/images/
-    - assets/videos/
-    - assets/audios/
-    - assets/lottie_animations/
+
   # To add assets to your application, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg
